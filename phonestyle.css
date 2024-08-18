@@ -39,9 +39,16 @@
     }
     
 }
-
+h1{
+    font-size: 80px;
+    overflow: hidden;
+}
+h2{
+    font-size: 20px;
+    
+}
 body{
-    background: #00000a;
+    background: white;
     display:flex;
     flex-direction: column;
     gap: 3em;
@@ -50,9 +57,72 @@ body{
     min-height: 100vh;
     font-family: 'Inter';
     font-size: var(--size);
-
+    
+}
+a{
+    color: #898989;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+    text-transform: capitalize;
+    position: relative;
+    padding: 0 10px;
+    margin: 0 30px;
+    display: inline-block; /* Ensure the element behaves as a block for scaling */
+    transition: color .3s ease, transform .3s ease; /* Smooth transition for color and scale */
 }
 
+a:hover{
+    color: black;
+    transform: scale(1.1); /* Slightly increase size without affecting layout */
+}
+
+a::before{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    transition: all .5s;
+}
+
+a:hover::before{
+    width: 100%;
+}
+
+.text-block.one {
+    
+    transform: translate(-60%,500%);
+    
+    text-align: left;
+}
+.text-block.two {
+    
+    transform: translate(-50%,1270%);
+    
+    text-align: left;
+}
+.text-block.three {
+    
+    transform: translate(50%,600%);
+    
+    text-align: right;
+}
+.lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.line {
+    stroke: #000;
+    stroke-width: 2;
+}
 .phone{
     position: relative;
     z-index: 1;
