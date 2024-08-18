@@ -94,19 +94,19 @@ a:hover::before{
 
 .text-block.one {
     
-    transform: translate(-60%,500%);
+    transform: translate(-55%,20%);
     
     text-align: left;
 }
 .text-block.two {
     
-    transform: translate(-50%,1270%);
+    transform: translate(-45%,-1300%);
     
     text-align: left;
 }
 .text-block.three {
     
-    transform: translate(50%,600%);
+    transform: translate(50%,-2000%);
     
     text-align: right;
 }
@@ -123,6 +123,11 @@ a:hover::before{
     stroke: #000;
     stroke-width: 2;
 }
+.phone {
+    margin: 0 auto; /* Center the phone */
+    position: relative; /* Ensure positioning doesn't push it out of alignment */
+}
+
 .phone{
     position: relative;
     z-index: 1;
@@ -139,7 +144,9 @@ a:hover::before{
     --webkit-backface-visibility: hidden;
 
 }
-
+p{
+    font-size: 25px;
+}
 .phone::before{
     content: "";
     position: absolute;
@@ -192,6 +199,31 @@ a:hover::before{
 
 }
 
+@keyframes pop {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+    
+}
+
+.two {
+    
+    animation: pop linear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+.container, .one {
+    
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* or a suitable height */
+    text-align: center;
+}
 .buttons .button{
     background: hsl(var(--c-h),20%, 95%);
     height: 6em;
